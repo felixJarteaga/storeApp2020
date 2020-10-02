@@ -1,0 +1,54 @@
+@startuml
+object FactoryTag{
+footer(params)
+p(params)
+button(params)
+span(params)
+section(params)
+article(params)
+image(params)
+text(params)
+svg(params)
+a(params)
+}
+
+object FactoryLogo{
+logoInformatica()
+logoHarnina()
+logoMarcaAgua()
+}
+
+object FactoryBranding{
+brandingIndex()
+
+}
+
+object FactoryHeader{
+
+}
+
+object FactoryButton{
+hamburgerButton()
+}
+
+object FactoryFooter{
+
+}
+
+object Index{
+}
+
+
+FactoryFooter *-- FactoryButton
+
+FactoryHeader *-- FactoryBranding
+FactoryBranding*-- FactoryLogo
+
+FactoryButton *-- FactoryTag
+FactoryLogo *-- FactoryTag
+
+
+
+Index o-- FactoryFooter : footer
+Index o-- FactoryHeader : header
+@enduml
