@@ -33,10 +33,12 @@ footer.getFooter();*/
 
 import { FactoryHeader } from "./modul_js/factoryHeader.js";
 import { FactoryFooter } from "./modul_js/factoryFooter.js";
-
+import { FactoryFunction } from "./modul_js/factoryFunction.js";
 const d = document;
+const factoryFunction = new FactoryFunction();
 
 d.addEventListener("DOMContentLoaded", (e) => {
   d.getElementById("myFooter").appendChild(FactoryFooter());
   d.getElementById("myHeader").appendChild(FactoryHeader());
+  factoryFunction.darkLight("dark-mode");
 });

@@ -30,12 +30,31 @@ export function FactoryTag() {
     button.type = "button";
     return button;
   };
+  API.div = function (params) {
+    const div = document.createElement("div");
+    div.id = params.id || "";
+    div.className = params.class || "";
+    div.innerHTML = params.text || "";
+    return div;
+  };
   API.footer = function (params) {
     const footer = document.createElement("footer");
     footer.id = params.id || "";
     footer.className = params.class || "";
     footer.innerHTML = params.text || "";
     return footer;
+  };
+  API.form = function (params) {
+    const form = document.createElement("form");
+    form.id = params.id || "";
+    form.className = params.class || "";
+    form.name = params.name || "";
+    form.action = params.action || "";
+    form.autocomplete = params.autocomplete || "on";
+    form.enctype = params.enctype || "ontext/plain";
+    form.method = params.method || "POST";
+    form.target = params.target || "_blank";
+    return form;
   };
   API.image = function (params) {
     const img = document.createElement("img");
@@ -44,6 +63,40 @@ export function FactoryTag() {
     img.src = params.src || "";
     img.alt = params.alt || "";
     return img;
+  };
+  API.input = function (params) {
+    var input = document.createElement("input");
+    input.id = params.id;
+    input.setAttribute("data-validate", params.validate);
+    input.className = params.class || "";
+    input.type = params.type || "";
+    input.name = params.name || "";
+    input.value = params.value || "";
+    input.size = params.size || 20;
+    //input.setAttribute("role", params.role);
+    input.setAttribute("minlength", params.minLength);
+    input.maxLength = params.maxLength || "";
+    input.required = params.required || "";
+    input.placeholder = params.placeholder || "";
+    input.title = params.title || "";
+
+    return input;
+  };
+  API.label = function (params) {
+    var label = document.createElement("label");
+    label.id = params.id;
+    label.className = params.class || "";
+    label.htmlFor = params.for || "";
+    label.innerHTML = params.text || "";
+    label.dataset.change = params.change || "";
+    return label;
+  };
+  API.nav = function (params) {
+    const nav = document.createElement("nav");
+    nav.id = params.id || "";
+    nav.className = params.class || "";
+    nav.innerHTML = params.text || "";
+    return nav;
   };
 
   API.p = function (params) {
