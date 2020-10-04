@@ -10,6 +10,7 @@ image(params)
 text(params)
 svg(params)
 a(params)
+div(params)
 }
 
 object FactoryLogo{
